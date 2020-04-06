@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:dashboard_cards/widgets/cardDetails.dart';
 import 'package:dashboard_cards/data.dart';
 
 class CardSection extends StatelessWidget {
@@ -14,7 +15,7 @@ class CardSection extends StatelessWidget {
             'Selected Card',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 16,
+              fontSize: 20,
             ),
           ),
         ),
@@ -36,16 +37,29 @@ class CardSection extends StatelessWidget {
                   child: Stack(
                     children: <Widget>[
                       Positioned.fill(
+                        top: -150,
+                        bottom: -200,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            boxShadow: customShadow,
+                            shape: BoxShape.circle,
+                            color: Colors.white38,
+                          ),
+                        ),
+                      ),
+                      Positioned.fill(
                         left: -300,
                         top: -100,
                         bottom: -100,
                         child: Container(
                           decoration: BoxDecoration(
+                            boxShadow: customShadow,
                             shape: BoxShape.circle,
                             color: Colors.white38,
                           ),
                         ),
-                      )
+                      ),
+                      CardDetails()
                     ],
                   ),
                 );
